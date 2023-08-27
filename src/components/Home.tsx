@@ -27,7 +27,7 @@ export const Home = () => {
         return () => window.removeEventListener("scroll", handleScroll)
     },[loadItens])
 
-  return (
+return (
 
     <main className='max-w-6xl mx-auto'>
         <div className="top flex flex-col md:flex-row justify-between items-center">
@@ -67,5 +67,5 @@ export const Home = () => {
             ))}
         </div>
     </main>
-  );
+);
 };

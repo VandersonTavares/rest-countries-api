@@ -27,16 +27,16 @@ export const Details = () => {
                     <button className='px-5 py-2 bg-white rounded shadow-md flex items-center gap-2'><BsArrowLeft /> Back</button>
                 </Link>
             </div>
-            <div className="details sm:flex items-center gap-5 sm:gap-28 mx-5">
-                <div className="left flag-img sm:w-1/2">
+            <div className="details md:flex items-center gap-5 md:gap-28 mx-5">
+                <div className="left flag-img md:w-1/2">
                     <img src={country.flags.png} alt={country.nativeName} className='w-full'/>
                 </div>
-                <div className="right infos sm:w-1/2 text-center sm:text-left mt-5">
+                <div className="right infos md:w-1/2 text-center md:text-left mt-5">
                     <h1 className="font-bold text-3xl mb-5">{countryName}</h1>
                     <div className="detailed-infos lg:flex justify-between items-center">
                         <div>
                             <p className="font-semibold">Native Name: <span className="font-normal">{country.name}</span></p>
-                            <p className="font-semibold">Population: <span className="font-normal">{country.population}</span></p>
+                            <p className="font-semibold">Population: <span className="font-normal">{country.population.toLocaleString()}</span></p>
                             <p className="font-semibold">Region: <span className="font-normal">{country.region}</span></p>
                             <p className="font-semibold">Sub Region: <span className="font-normal">{country.subregion}</span></p>
                             <p className="font-semibold">Capital: <span className="font-normal">{country.capital}</span></p>
@@ -65,7 +65,7 @@ export const Details = () => {
                         <h1 className="font-semibold">Border Countries: </h1>
                         <div className='flex flex-wrap gap-2 ml-5'>
                             {neighborCountries?.map((neighbor) => (
-                                <div key={neighbor?.alpha3Code} className="ftext-sm px-2 py-2 text-center shadow bg-white rounded">{neighbor?.name}</div>
+                                <div key={neighbor?.alpha3Code} className="text-sm px-2 py-2 text-center shadow bg-white rounded">{neighbor?.name}</div>
                             ))}
                         </div>
                     </div>
