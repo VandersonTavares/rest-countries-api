@@ -20,7 +20,7 @@ export const Home = () => {
             const scrollHeight = target.documentElement.scrollHeight
             const currentHeight = target.documentElement.scrollTop + window.innerHeight
             if(currentHeight + 1 >= scrollHeight){
-                setLoadItens(loadItens + 8)
+                setLoadItens(loadItens + 4)
             }
         }
         window.addEventListener("scroll", handleScroll)
@@ -53,7 +53,7 @@ export const Home = () => {
             </div>
         </div>
 
-        <div className="grid grid-cols-4 grid-rows-2 gap-16 mb-10">
+        <div className="grid sm:grid-cols-2 md:grid-cols-4 sm:gap-2 md:gap-5 lg:gap-16 mb-10">
             {jsonData.slice(0, loadItens).map((country) => (
                 <Link to={`/details/${country.name}`} key={uuidv4()} className='rounded overflow-hidden drop-shadow-md bg-white'>
                     <Flag

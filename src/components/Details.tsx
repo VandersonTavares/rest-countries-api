@@ -1,6 +1,8 @@
 import { useParams, Link } from 'react-router-dom';
 import { useState } from "react"
 
+import { BsArrowLeft } from "react-icons/bs"
+
 import jsonData from "../../data.json"
 
 export const Details = () => {
@@ -20,16 +22,16 @@ export const Details = () => {
 
     return (
         <div className="max-w-6xl mx-auto">
-            <div>
+            <div className='my-16'>
                 <Link to={"/"}>
-                    <button>Voltar</button>
+                    <button className='px-5 py-2 bg-white rounded shadow-md flex items-center gap-2'><BsArrowLeft /> Back</button>
                 </Link>
             </div>
-            <div className="details h-[calc(100vh-110px)] flex items-center">
-                <div className="left flag-img w-1/2 border">
-                    <img src={country.flags.png} alt={country.nativeName} />
+            <div className="details flex items-center gap-28">
+                <div className="left flag-img w-1/2">
+                    <img src={country.flags.png} alt={country.nativeName} className='w-full'/>
                 </div>
-                <div className="right infos w-1/2 border">
+                <div className="right infos w-1/2">
                     <h1 className="font-bold text-3xl mb-5">{countryName}</h1>
                     <div className="detailed-infos flex justify-between items-center">
                         <div>
@@ -59,11 +61,11 @@ export const Details = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="flex mt-10 border">
+                    <div className="flex mt-10">
                         <h1 className="font-semibold">Border Countries: </h1>
                         <div className='flex flex-wrap gap-2 ml-5'>
                             {neighborCountries?.map((neighbor) => (
-                                <div key={neighbor?.alpha3Code} className="ftext-sm px-2 py-2 text-center shadow-sm bg-emerald-400 rounded">{neighbor?.name}</div>
+                                <div key={neighbor?.alpha3Code} className="ftext-sm px-2 py-2 text-center shadow bg-white rounded">{neighbor?.name}</div>
                             ))}
                         </div>
                     </div>
