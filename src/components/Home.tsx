@@ -30,18 +30,18 @@ export const Home = () => {
   return (
 
     <main className='max-w-6xl mx-auto'>
-        <div className="top flex justify-between items-center">
+        <div className="top flex flex-col md:flex-row justify-between items-center">
             <div className="search-filter my-10">
-                <div className="search relative">
+                <div className="search relative -mb-5 sm:mb-0">
                     <div className='absolute top-0 translate-y-[22px] ml-5'>
                         <BiSearch />
                     </div>
-                    <input type="text" placeholder='Search for a country...' className='pl-12 h-14 w-[400px] rounded-lg shadow-lg' />
+                    <input type="text" placeholder='Search for a country...' className='pl-12 h-14 w-full md:w-[400px] rounded-lg shadow-lg' />
                 </div>
             </div>
-            <div className="results">
+            <div className="results mb-5 md:mb-0">
                 <div className="filter">
-                    <select defaultValue={"default"} className='h-14 w-[200px] pl-5 rounded-lg shadow-lg text-semibold text-base border-r-8 border-transparent px-4'>
+                    <select defaultValue={"default"} className='h-14 w-full md:w-[200px] lg:w-[250px] pl-5 rounded-lg shadow-lg text-semibold text-base border-r-8 border-transparent px-4'>
                         <option value="default">Filter By Region</option>
                         <option value="africa">Africa</option>
                         <option value="america">America</option>

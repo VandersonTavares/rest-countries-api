@@ -22,18 +22,18 @@ export const Details = () => {
 
     return (
         <div className="max-w-6xl mx-auto">
-            <div className='my-16'>
+            <div className='my-16 mx-5'>
                 <Link to={"/"}>
                     <button className='px-5 py-2 bg-white rounded shadow-md flex items-center gap-2'><BsArrowLeft /> Back</button>
                 </Link>
             </div>
-            <div className="details flex items-center gap-28">
-                <div className="left flag-img w-1/2">
+            <div className="details sm:flex items-center gap-5 sm:gap-28 mx-5">
+                <div className="left flag-img sm:w-1/2">
                     <img src={country.flags.png} alt={country.nativeName} className='w-full'/>
                 </div>
-                <div className="right infos w-1/2">
+                <div className="right infos sm:w-1/2 text-center sm:text-left mt-5">
                     <h1 className="font-bold text-3xl mb-5">{countryName}</h1>
-                    <div className="detailed-infos flex justify-between items-center">
+                    <div className="detailed-infos lg:flex justify-between items-center">
                         <div>
                             <p className="font-semibold">Native Name: <span className="font-normal">{country.name}</span></p>
                             <p className="font-semibold">Population: <span className="font-normal">{country.population}</span></p>
@@ -44,12 +44,12 @@ export const Details = () => {
                         <div>
                             <p className="font-semibold">Top Level Domain: <span className="font-normal">{country.topLevelDomain}</span></p>
                             <div className='currencies'>
-                                <ul className='flex gap-2'>
+                                <ul className='flex gap-2 mt-4 sm:mt-0'>
                                     <p className='font-semibold'>Currencies: </p>
                                     {country.currencies?.map((currency, index) => (
                                         <li key={currency.code}>{currency.name}{index !== country.currencies.length - 1 && ','}</li>
                                     ))}
-                                 </ul>
+                                </ul>
                             </div>
                             <div className="languages">
                                 <ul className='flex gap-2'>
